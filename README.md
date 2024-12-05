@@ -1,107 +1,70 @@
-# Project Title
+# Getting Started with Create React App
 
-A brief description of what your project does and who it's for.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Table of Contents
-1. [Features](#features)
-2. [Installation](#installation)
-3. [Usage](#usage)
-4. [Configuration](#configuration)
-5. [Contributing](#contributing)
-6. [License](#license)
-7. [Contact](#contact)
+## Available Scripts
 
-## Features
+In the project directory, you can run:
 
-List the key features or highlights of your project, for example:
-- Feature 1
-- Feature 2
-- Feature 3
+### `npm start`
 
-## Installation
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Provide instructions on how to install and set up your project.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-```
-# Clone the repository
-git clone https://github.com/yourusername/yourproject.git
+### `npm test`
 
-# Navigate to the project directory
-cd yourproject
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-# Install dependencies (if applicable)
-npm install
-```
+### `npm run build`
 
-## Prerequisites
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-List any prerequisites for running the project, such as:
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
--   Node.js (v14+)
--   Python (v3.7+)
--   Docker
-## Example: Install Node.js via package manager
-```
-sudo apt-get install -y nodejs
-```
-## Usage
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Explain how to use the project once it's set up. Include code examples or commands.
+### `npm run eject`
 
-Start the project (example for Node.js)
-```
-npm start
-```
-#### Examples
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-Provide some example usage scenarios:
-Example request (if applicable)
-```
-curl -X GET "https://api.yourproject.com/v1/resource"
-```
-## Configuration
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Provide details on how to configure the project, such as environment variables or configuration files.
-##### Example .env file
-```
-DB_HOST=localhost
-DB_USER=user
-DB_PASS=password
-```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-## Running Tests
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-Explain how to run tests for the project (if applicable).
-##### Run tests (example for Node.js)
-```
-npm test
-```
-## Deployment
+## Learn More
 
-Provide instructions on how to deploy the project to production (if applicable). For example, deployment steps to a cloud service like AWS or Heroku.
-#### Deploy to Heroku
-```
-heroku create
-git push heroku main
-```
-## Contributing
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-If you want others to contribute to your project, outline the process here.
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-1.  Fork the project.
-2.  Create a new branch (`git checkout -b feature/YourFeature`).
-3.  Commit your changes (`git commit -m 'Add YourFeature'`).
-4.  Push to the branch (`git push origin feature/YourFeature`).
-5.  Open a pull request.
+### Code Splitting
 
-## License
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-Specify the license for your project, for example:
+### Analyzing the Bundle Size
 
-This project is licensed under the MIT License - see the [LICENSE](http://127.0.0.1) file for details.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-## Contact
+### Making a Progressive Web App
 
-Your Name - [@yourusername](https://twitter.com/yourusername) - your.email@example.com
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-Project Link: [https://github.com/yourusername/yourproject](https://github.com/yourusername/yourproject)
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
