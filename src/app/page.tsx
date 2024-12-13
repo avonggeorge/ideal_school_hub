@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { FontAwesome } from "@fortawesome/react-fontawesome"
+import { faHome, faSearch, faUser} from "@fortawesome/free-solid-svg-icons"
 
 export default function Home() {
   return (
