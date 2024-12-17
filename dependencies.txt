@@ -1,0 +1,9 @@
+Recharts
+npm install recharts
+
+Uninstall React-is 
+npm uninstall react-is
+
+React-is 
+ npm install react-is@latest
+
