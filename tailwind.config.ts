@@ -8,9 +8,21 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        colorMintGreen: "#CEF0D1",
+        colorMintGreenLight: "#F5FCF6",
+        colorPink: "#F8D0D2",
+        colorPinkLight: "#F9D9DB",
+        colorBlue: "#2B92E4",
+        colorBlueLight: "#55A7E9",
+        colorWhite: "EFF2FB",
       },
     },
   },

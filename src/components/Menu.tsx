@@ -27,85 +27,85 @@ const menuItems = [
     title: "MENU",
     items: [
       {
-        icon: <FontAwesomeIcon icon={faHouse} />,
+        icon: <FontAwesomeIcon icon={faHouse} size="lg"/>,
         label: "Home",
         href: "/",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
-        icon: <FontAwesomeIcon icon={faUserTie} />,
+        icon: <FontAwesomeIcon icon={faUserTie} size="lg"/>,
         label: "Teachers",
         href: "/list/teachers",
         visible: ["admin", "teacher"],
       },
       {
-        icon: <FontAwesomeIcon icon={faUserGraduate} />,
+        icon: <FontAwesomeIcon icon={faUserGraduate} size="lg"/>,
         label: "Students",
         href: "/list/students",
         visible: ["admin", "teacher"],
       },
       {
-        icon: <FontAwesomeIcon icon={faUsers} />,
+        icon: <FontAwesomeIcon icon={faUsers} size="lg"/>,
         label: "Parents",
         href: "/list/parents",
         visible: ["admin", "teacher"],
       },
       {
-        icon: <FontAwesomeIcon icon={faBook} />,
+        icon: <FontAwesomeIcon icon={faBook} size="lg"/>,
         label: "Subjects",
         href: "/list/subjects",
         visible: ["admin"],
       },
       {
-        icon: <FontAwesomeIcon icon={faChalkboard} />,
+        icon: <FontAwesomeIcon icon={faChalkboard} size="lg"/>,
         label: "Classes",
         href: "/list/classes",
         visible: ["admin", "teacher"],
       },
       {
-        icon: <FontAwesomeIcon icon={faChalkboardTeacher} />,
+        icon: <FontAwesomeIcon icon={faChalkboardTeacher} size="lg" />,
         label: "Lessons",
         href: "/list/lessons",
         visible: ["admin", "teacher"],
       },
       {
-        icon: <FontAwesomeIcon icon={faFileCircleQuestion} />,
+        icon: <FontAwesomeIcon icon={faFileCircleQuestion} size="lg" />,
         label: "Exams",
         href: "/list/exams",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
-        icon: <FontAwesomeIcon icon={faFileLines} />,
+        icon: <FontAwesomeIcon icon={faFileLines} size="lg" />,
         label: "Assignments",
         href: "/list/assignments",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
-        icon: <FontAwesomeIcon icon={faChartLine} />,
+        icon: <FontAwesomeIcon icon={faChartLine} size="lg" />,
         label: "Results",
         href: "/list/results",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
-        icon: <FontAwesomeIcon icon={faClipboardCheck} />,
+        icon: <FontAwesomeIcon icon={faClipboardCheck} size="lg" />,
         label: "Attendance",
         href: "/list/attendance",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
-        icon: <FontAwesomeIcon icon={faCalendarAlt} />,
+        icon: <FontAwesomeIcon icon={faCalendarAlt} size="lg"/>,
         label: "Events",
         href: "/list/events",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
-        icon: <FontAwesomeIcon icon={faEnvelope} />,
+        icon: <FontAwesomeIcon icon={faEnvelope} size="lg" />,
         label: "Messages",
         href: "/list/messages",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
-        icon: <FontAwesomeIcon icon={faBullhorn} />,
+        icon: <FontAwesomeIcon icon={faBullhorn} size="lg" />,
         label: "Announcements",
         href: "/list/announcements",
         visible: ["admin", "teacher", "student", "parent"],
@@ -116,19 +116,19 @@ const menuItems = [
     title: "OTHER",
     items: [
       {
-        icon: <FontAwesomeIcon icon={faUser} />,
+        icon: <FontAwesomeIcon icon={faUser} size="lg" />,
         label: "Profile",
         href: "/profile",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
-        icon: <FontAwesomeIcon icon={faCog} />,
+        icon: <FontAwesomeIcon icon={faCog} size="lg" />,
         label: "Settings",
         href: "/settings",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
-        icon: <FontAwesomeIcon icon={faSignOutAlt} />,
+        icon: <FontAwesomeIcon icon={faSignOutAlt} size="lg" />,
         label: "Logout",
         href: "/logout",
         visible: ["admin", "teacher", "student", "parent"],
@@ -151,7 +151,7 @@ const Menu = () => {
                 <Link
                   href={item.href}
                   key={item.href} // Use a unique identifier
-                  className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2 md:px-2 rounded-md hover:bg-lamaSkyLight"
+                  className="flex items-center justify-center lg:justify-start gap-4 text-slate-500 py-2 md:px-2 rounded-md hover:bg-colorMintGreenLight"
                 >
                   <span>{item.icon}</span>
                   <span className="hidden lg:block">{item.label}</span>
