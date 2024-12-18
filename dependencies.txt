@@ -1,3 +1,6 @@
+FontAwesome
+npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
+
 Recharts
 npm install recharts
 

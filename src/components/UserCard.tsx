@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEllipsis
@@ -7,9 +6,9 @@ import {
 
 const UserCard = ({ type }: { type: string }) => {
    return (
-    <div className="rounded-2xl odd:bg-colorPink even:bg-colorBlue p-4 flex-1 min-w-[130px]">
+    <div className="rounded-2xl odd:bg-colorMintGreen even:bg-colorBlue p-4 flex-1 min-w-[130px]">
         <div className="flex justify-between items-center">
-        <span className="text-slate-600[10px] bg-white px-2 py-1 rounded-full text-green-600">
+        <span className="text-slate-600[10px] bg-white px-2 py-1 rounded-full text-colorMintGreen">
           2024/25
         </span>
         <FontAwesomeIcon

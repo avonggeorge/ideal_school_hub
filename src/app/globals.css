@@ -113,3 +113,7 @@
     color: gray !important;
     margin-bottom: 5px;
 }
+
+.recharts-legend-item text {
+  fill: #475569; /* Tailwind Slate-600 */
+}
