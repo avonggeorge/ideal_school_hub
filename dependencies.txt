@@ -15,3 +15,6 @@ npm i react-calendar
 
 Full calendar
 npm install @fullcalendar/react @fullcalendar/daygrid @fullcalendar/timegrid @fullcalendar/interaction @fullcalendar/moment
+
+fobt import
+@import "@fontsource/bangers"; 

@@ -19,9 +19,8 @@ export default function DashboardLayout({
           href="/"
           className="flex items-center justify-center lg:justify-start gap-2"
         >
-          {/* <Image src="/logo.png" alt="logo" width={32} height={32} /> */}
-          <FontAwesomeIcon icon={faGraduationCap} size="2x" color="#2B92E4" />
-          <span className="hidden lg:block font-bold">IdealSchools</span>
+          <FontAwesomeIcon icon={faGraduationCap} size="3x" color="#2B92E4" />
+          <span className="hidden lg:block text-sm md:text-base text-funky font-bold">IdealSchools</span>
         </Link>
         <Menu />
       </div>
