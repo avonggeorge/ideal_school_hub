@@ -31,6 +31,7 @@ const BigCalendar = () => {
 
   return (
     <FullCalendar
+      contentHeight="auto"
       plugins={[timeGridPlugin, interactionPlugin]}
       events={calendarEvents} // Your event data
       initialView={currentView}
@@ -48,13 +49,11 @@ const BigCalendar = () => {
       slotMinTime="08:00:00" // Set the minimum time for the calendar
       slotMaxTime="17:00:00" // Set the maximum time for the calendar
       allDaySlot={false} // Hide the all-day slot
-      contentHeight="auto" // Make content height auto to adjust dynamically
       slotLabelFormat={{
         hour: "2-digit",
         minute: "2-digit",
         hour12: true,
       }}
-      eventClick={(info) => alert(`Event clicked: ${info.event.title}`)}
       viewDidMount={(viewInfo) => {
         const calendarApi = viewInfo.view.calendar;
         calendarApi.setOption("hiddenDays", [0, 6]);
@@ -70,20 +69,25 @@ const BigCalendar = () => {
           buttonText: "Day",
         },
       }}
-      dateClick={(info) => alert(`Clicked on date: ${info.dateStr}`)}
+      
       eventContent={(eventInfo) => {
-        const startTime = eventInfo.event.start
-          ? eventInfo.event.start.toLocaleTimeString()
-          : "No start time"; 
+  const startTime = eventInfo.event.start
+    ? eventInfo.event.start.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    : "No start time";
 
-        return (
-          <div className="text-lg font-semibold">
-            <strong>{eventInfo.event.title}</strong>
-            <br />
-            {startTime}
-          </div>
-        );
-      }}
+  const endTime = eventInfo.event.end
+    ? eventInfo.event.end.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    : "No end time";
+
+  return (
+    <div className="text-sm md:text-base font-semibold">
+      <strong>{startTime} - {endTime}</strong>
+      <br />
+      {eventInfo.event.title}
+    </div>
+  );
+}}
+
       height="98%"
       eventDataTransform={(eventData) => {
         eventData.backgroundColor = getRandomColor();

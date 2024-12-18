@@ -17,24 +17,25 @@
     color: black !important;
 }
 
-/* Make each time slot (column) taller */
+/* Adjust time slot height */
 .fc-timegrid-slot {
-  height: 80px !important;  /* Adjust the height as per your preference */
+  height: 60px !important; /* Keep this if you prefer taller slots */
 }
 
-/* Optional: Ensure the calendar fills the space */
+/* Ensure the calendar fills only its parent container */
 .calendar-container {
-  height: 100vh; /* This makes the container fill the entire viewport height */
+  height: 100%; /* Take height relative to the parent container */
+  width: auto;
   display: flex;
   flex-direction: column;
 }
 
+/* Ensure FullCalendar adapts to its parent container */
 .fc {
-  height: 100%; /* Ensure the FullCalendar component fills the parent container */
+  height: 100%; /* Take height relative to the parent container */
 }
 
 /* Optional: Adjust spacing and padding for better clarity */
 .fc-timegrid-event {
   padding: 10px;
-  font-size: 14px;
 }
