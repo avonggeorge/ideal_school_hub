@@ -9,6 +9,12 @@ npm uninstall react-is
 
 React-is 
  npm install react-is@latest
+ 
+Calendar
+npm i react-calendar
 
- Calendar
- npm install @fullcalendar/react @fullcalendar/daygrid @fullcalendar/timegrid @fullcalendar/interaction @fullcalendar/moment
+Full calendar
+npm install @fullcalendar/react @fullcalendar/daygrid @fullcalendar/timegrid @fullcalendar/interaction @fullcalendar/moment
+
+fobt import
+@import "@fontsource/bangers"; 

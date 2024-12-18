@@ -921,54 +921,69 @@ export const calendarEvents = [
   {
     title: "Math",
     allDay: false,
+    start: new Date(2024, 11, 19, 8, 0),
+    end: new Date(2024, 11, 19, 8, 45),
+
     start: new Date(2024, 11, 17, 8, 0),
     end: new Date(2024, 11, 17, 9, 0),
   },
   {
     title: "English",
     allDay: false,
-    start: new Date(2024, 11, 17, 9, 0),
-    end: new Date(2024, 11, 17, 10, 0),
+    start: new Date(2024, 11, 19, 9, 0),
+    end: new Date(2024, 11, 19, 9, 45),
   },
   {
     title: "Biology",
     allDay: false,
-    start: new Date(2024, 11, 17, 10, 0),
-    end: new Date(2024, 11, 17, 11, 0),
+    start: new Date(2024, 11, 19, 10, 0),
+    end: new Date(2024, 11, 19, 10, 45),
   },
   {
     title: "Physics",
     allDay: false,
-    start: new Date(2024, 11, 17, 11, 0),
-    end: new Date(2024, 11, 17, 12, 0),
+    start: new Date(2024, 11, 19, 11, 0),
+    end: new Date(2024, 11, 19, 11, 45),
   },
   {
     title: "Chemistry",
     allDay: false,
-    start: new Date(2024, 11, 17, 12, 0),
-    end: new Date(2024, 11, 17, 13, 0),
+    start: new Date(2024, 11, 19, 13, 0),
+    end: new Date(2024, 11, 19, 13, 45),
   },
   {
     title: "History",
     allDay: false,
+    start: new Date(2024, 11, 19, 14, 0),
+    end: new Date(2024, 11, 19, 14, 45),
+
     start: new Date(2024, 11, 17, 13, 0),
     end: new Date(2024, 11, 17, 14, 0),
   },
   {
     title: "English",
     allDay: false,
+    start: new Date(2024, 11, 20, 9, 0),
+    end: new Date(2024, 11, 20, 9, 45),
+
     start: new Date(2024, 11, 17, 14, 0),
     end: new Date(2024, 11, 17, 15, 0),
   },
   {
     title: "Biology",
     allDay: false,
+    start: new Date(2024, 11, 20, 10, 0),
+    end: new Date(2024, 11, 20, 10, 45),
+
     start: new Date(2024, 11, 17, 15, 0),
     end: new Date(2024, 11, 17, 8, 45),
   },
   {
     title: "Physics",
     allDay: false,
+    start: new Date(2024, 11, 20, 11, 0),
+    end: new Date(2024, 11, 20, 11, 45),
+
     start: new Date(2024, 11, 17, 8, 0),
     end: new Date(2024, 11, 17, 8, 45),
   },
@@ -976,88 +991,133 @@ export const calendarEvents = [
   {
     title: "History",
     allDay: false,
-    start: new Date(2024, 11, 17, 8, 0),
-    end: new Date(2024, 11, 17, 8, 45),
-  },
-  {
-    title: "Math",
-    allDay: false,
-    start: new Date(2024, 11, 17, 8, 0),
-    end: new Date(2024, 11, 17, 8, 45),
-  },
-  {
-    title: "Biology",
-    allDay: false,
-    start: new Date(2024, 11, 17, 8, 0),
-    end: new Date(2024, 11, 17, 8, 45),
+    start: new Date(2024, 11, 20, 14, 0),
+    end: new Date(2024, 11, 20, 14, 45),
   },
 
   {
     title: "Chemistry",
     allDay: false,
-    start: new Date(2024, 11, 17, 8, 0),
-    end: new Date(2024, 11, 17, 8, 45),
+    start: new Date(2024, 11, 23, 8, 0),
+    end: new Date(2024, 11, 23, 8, 45),
   },
+
   {
-    title: "History",
+    title: "Biologyy",
     allDay: false,
-    start: new Date(2024, 11, 17, 8, 0),
-    end: new Date(2024, 11, 17, 8, 45),
+    start: new Date(2024, 11, 23, 9, 0),
+    end: new Date(2024, 11, 23, 9, 45),
   },
+
   {
     title: "English",
     allDay: false,
-    start: new Date(2024, 11, 17, 8, 0),
-    end: new Date(2024, 11, 17, 8, 45),
+    start: new Date(2024, 11, 23, 10, 0),
+    end: new Date(2024, 11, 23, 10, 45),
+  },
+
+
+  {
+    title: "Physics",
+    allDay: false,
+    start: new Date(2024, 11, 23, 11, 0),
+    end: new Date(2024, 11, 23, 11, 45),
+  },
+
+
+  {
+    title: "History",
+    allDay: false,
+    start: new Date(2024, 11, 23, 14, 0),
+    end: new Date(2024, 11, 23, 14, 45),
+  },
+
+  {
+    title: "Music",
+    allDay: false,
+    start: new Date(2024, 11, 23, 15, 0),
+    end: new Date(2024, 11, 23, 15, 45),
+  },
+
+  {
+    title: "Math",
+    allDay: false,
+    start: new Date(2024, 11, 24, 8, 0),
+    end: new Date(2024, 11, 24, 8, 45),
   },
   {
     title: "Biology",
     allDay: false,
-    start: new Date(2024, 11, 17, 8, 0),
-    end: new Date(2024, 11, 17, 8, 45),
+    start: new Date(2024, 11, 24, 10, 0),
+    end: new Date(2024, 11, 24, 10, 45),
+
+  },
+
+  {
+    title: "Chemistry",
+    allDay: false,
+    start: new Date(2024, 11, 24, 13, 0),
+    end: new Date(2024, 11, 24, 13, 45),
+  },
+  {
+    title: "History",
+    allDay: false,
+    start: new Date(2024, 11, 24, 14, 0),
+    end: new Date(2024, 11, 24, 14, 45),
+  {
+    title: "English",
+    allDay: false,
+    start: new Date(2024, 11, 25, 9, 0),
+    end: new Date(2024, 11, 25, 9, 45),
+  },
+  {
+    title: "Biology",
+    allDay: false,
+    start: new Date(2024, 11, 25, 10, 0),
+    end: new Date(2024, 11, 25, 10, 45),
   },
   {
     title: "Physics",
     allDay: false,
-    start: new Date(2024, 11, 17, 8, 0),
-    end: new Date(2024, 11, 17, 8, 45),
+    start: new Date(2024, 11, 25, 11, 0),
+    end: new Date(2024, 11, 25, 11, 45),
   },
 
   {
     title: "History",
     allDay: false,
-    start: new Date(2024, 11, 17, 8, 0),
-    end: new Date(2024, 11, 17, 8, 45),
+    start: new Date(2024, 11, 25, 14, 0),
+    end: new Date(2024, 11, 25, 14, 45),
   },
   {
     title: "Math",
     allDay: false,
-    start: new Date(2024, 7, 16, 8, 0),
-    end: new Date(2024, 7, 16, 8, 45),
+    start: new Date(2024, 11, 26, 8, 0),
+    end: new Date(2024, 11, 26, 8, 45),
   },
   {
     title: "English",
     allDay: false,
-    start: new Date(2024, 7, 16, 9, 0),
-    end: new Date(2024, 7, 16, 9, 45),
+    start: new Date(2024, 11, 26, 9, 0),
+    end: new Date(2024, 11, 26, 9, 45),
   },
 
   {
     title: "Physics",
     allDay: false,
-    start: new Date(2024, 7, 16, 11, 0),
-    end: new Date(2024, 7, 16, 11, 45),
+    start: new Date(2024, 11, 26, 11, 0),
+    end: new Date(2024, 11, 26, 11, 45),
   },
   {
     title: "Chemistry",
     allDay: false,
-    start: new Date(2024, 7, 16, 13, 0),
-    end: new Date(2024, 7, 16, 13, 45),
+    start: new Date(2024, 11, 26, 13, 0),
+    end: new Date(2024, 11, 26, 13, 45),
   },
   {
     title: "History",
     allDay: false,
-    start: new Date(2024, 7, 16, 14, 0),
-    end: new Date(2024, 7, 16, 14, 45),
+    start: new Date(2024, 11, 26, 14, 0),
+    end: new Date(2024, 11, 26, 14, 45),
   },
 ];

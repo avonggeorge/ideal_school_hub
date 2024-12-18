@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+       fontFamily: {
+        funky: ['"Bangers"', 'cursive'],
+       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
