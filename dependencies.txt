@@ -9,7 +9,7 @@ npm uninstall react-is
 
 React-is 
  npm install react-is@latest
-
+ 
 Calendar
 npm i react-calendar
 
