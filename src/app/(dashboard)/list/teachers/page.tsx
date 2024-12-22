@@ -1,8 +1,10 @@
+"use client"; // Add this directive at the top
+
 import Pagination from "@/components/Pagination";
 import TableSearch from "@/components/TableSearch";
 import Table from "@/components/Table";
 import Link from "next/link";
-import { useState } from "react"; // Import React hooks if using state  
+import { useState } from "react"; // Import React hooks if using state
 import { teachersData } from "@/lib/data";
 
 type Teacher = {
@@ -60,8 +62,6 @@ const TeacherListPage = () => {
         return (
             <tr key={item.id}>
                 <td>
-                    {/* Example of using an image */}
-                    {/* <Image src={item.photo} alt="pic" width={40} className="md:hidden xl:block w-10 h-10 rounded-full object-cover"/> */}
                     <div className="flex flex-col">
                         <h3 className="font-semibold">{item.name}</h3>
                         <p className="text-xs text-gray-500">{item?.email}</p>
