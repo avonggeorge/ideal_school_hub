@@ -1,6 +1,8 @@
 import Pagination from "@/components/Pagination";
 import TableSearch from "@/components/TableSearch";
 import Table from "@/components/Table";
+import Link from "next/link";
+
 
 type Teacher = {
     teacherID: string;
@@ -72,12 +74,13 @@ const TeacherListPage = () => {
                     <div className="flex items-center gap-2">
                         <Link href={`/list/teachers/${item.id}`}>
                             <button className="w-7 h-7 flex-center justify-center rounded-full bg-red">
-                                del
-                            </button>
-                        </Link>
-                        <button className="w-7 h-7 flex-center justify-center rounded-full bg-lamaSky">
                                 view
                             </button>
+                        </Link>
+                        {role === "admin" &&
+                        <button className="w-7 h-7 flex-center justify-center rounded-full bg-lamaSky">
+                            del
+                        </button>
                     </div>
                 </td>
             </tr>
