@@ -60,7 +60,7 @@ const TeacherListPage = () => {
 
     const renderRow = (item: Teacher) => {
         return (
-            <tr key={item.id}>
+            <tr key={item.id} className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-lamaPurpleLight">
                 <td>
                     <div className="flex flex-col">
                         <h3 className="font-semibold">{item.name}</h3>
@@ -75,12 +75,12 @@ const TeacherListPage = () => {
                 <td>
                     <div className="flex items-center gap-2">
                         <Link href={`/list/teachers/${item.id}`}>
-                            <button className="w-7 h-7 flex-center justify-center rounded-full bg-blue">
+                            <button className="w-12 h-7 flex-center justify-center rounded-full bg-cyan-500">
                                 view
                             </button>
                         </Link>
                         {role === "admin" && (
-                            <button className="w-7 h-7 flex-center justify-center rounded-full bg-red">
+                            <button className="w-7 h-7 flex-center justify-center rounded-full bg-red-500">
                                 del
                             </button>
                         )}
