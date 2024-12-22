@@ -2,7 +2,8 @@ import Pagination from "@/components/Pagination";
 import TableSearch from "@/components/TableSearch";
 import Table from "@/components/Table";
 import Link from "next/link";
-
+import { useState } from "react"; // Import React hooks if using state  
+import { teachersData } from "@/lib/data";
 
 type Teacher = {
     teacherID: string;
@@ -14,12 +15,12 @@ type Teacher = {
     classes: string[];
     phone: string;
     address: string;
-}
+};
 
 const columns = [
     {
-        header:"Info",
-        accessor:"info",
+        header: "Info",
+        accessor: "info",
     },
     {
         header: "Teacher ID",
@@ -53,40 +54,41 @@ const columns = [
 ];
 
 const TeacherListPage = () => {
+    const role = "admin"; // Define the role variable as needed
 
-
-     const renderRow = (item:Teacher) => {
+    const renderRow = (item: Teacher) => {
         return (
-            <tr>
+            <tr key={item.id}>
                 <td>
+                    {/* Example of using an image */}
                     {/* <Image src={item.photo} alt="pic" width={40} className="md:hidden xl:block w-10 h-10 rounded-full object-cover"/> */}
                     <div className="flex flex-col">
                         <h3 className="font-semibold">{item.name}</h3>
                         <p className="text-xs text-gray-500">{item?.email}</p>
                     </div>
                 </td>
-                <td> className="hidden md:table-cell"{item.teacherID}</td>
-                <td> className="hidden md:table-cell"{item.subjects.join(",")}</td>
-                <td> className="hidden md:table-cell"{item.classes.join(",")}</td>
-                <td> className="hidden md:table-cell"{item.phone}</td>
-                <td> className="hidden md:table-cell"{item.address}</td>
+                <td className="hidden md:table-cell">{item.teacherID}</td>
+                <td className="hidden md:table-cell">{item.subjects.join(", ")}</td>
+                <td className="hidden md:table-cell">{item.classes.join(", ")}</td>
+                <td className="hidden lg:table-cell">{item.phone}</td>
+                <td className="hidden lg:table-cell">{item.address}</td>
                 <td>
                     <div className="flex items-center gap-2">
                         <Link href={`/list/teachers/${item.id}`}>
-                            <button className="w-7 h-7 flex-center justify-center rounded-full bg-red">
+                            <button className="w-7 h-7 flex-center justify-center rounded-full bg-blue">
                                 view
                             </button>
                         </Link>
-                        {role === "admin" &&
-                        <button className="w-7 h-7 flex-center justify-center rounded-full bg-lamaSky">
-                            del
-                        </button>
+                        {role === "admin" && (
+                            <button className="w-7 h-7 flex-center justify-center rounded-full bg-red">
+                                del
+                            </button>
+                        )}
                     </div>
                 </td>
             </tr>
-        )
+        );
     };
-
 
     return (
         <div className="bg-white p-4 rounded-md flex-1 m-4 mt-0">
@@ -97,18 +99,17 @@ const TeacherListPage = () => {
                     <div className="ml-auto">
                         <TableSearch />
                     </div>
-                    <div className="w-8 h-8 flex items-center justify-center rounded-full ">
+                    <div className="w-8 h-8 flex items-center justify-center rounded-full">
                         <button>
                             <span className="text-sm font-medium">Filter</span>
-                            {/* <span className="ml-1 text-gray-400">By Department</span> */}
                         </button>
                     </div>
-                    <div className="w-8 h-8 flex items-center justify-center rounded-full ">
+                    <div className="w-8 h-8 flex items-center justify-center rounded-full">
                         <button>
                             <span className="text-sm font-medium">Sort</span>
                         </button>
                     </div>
-                    <div className="w-8 h-8 flex items-center justify-center rounded-full ">
+                    <div className="w-8 h-8 flex items-center justify-center rounded-full">
                         <button>
                             <span className="text-sm font-medium">Add</span>
                         </button>
@@ -116,7 +117,7 @@ const TeacherListPage = () => {
                 </div>
             </div>
             {/* LIST */}
-            <Table columns={columns}/>
+            <Table columns={columns} renderRow={renderRow} data={teachersData} />
             {/* PAGINATION */}
             <Pagination />
         </div>
