@@ -1,3 +1,18 @@
+# Ideal Sch
+Ideal-School-Hub is a comprehensive web-based school management system with role-based access for administrators, teachers, students, and parents. The application provide tailored functionalities for each user type, ensuring efficient management of school operations and improved communication between all stakeholders.
+
+Core features:
+- Secure login system with role-based access control
+- Administrator dashboard for school-wide management
+- Teacher portal for class management and student progress tracking
+- Student interface for accessing schedules, assignments, and grades
+- Parent portal for monitoring their child's academic performance and school activities
+
+UI/Style:
+- Clean, intuitive interface with a professional academic aesthetic
+- Color-coded sections for easy navigation between different user roles
+- Responsive design with customizable widgets for personalized user experiences
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
