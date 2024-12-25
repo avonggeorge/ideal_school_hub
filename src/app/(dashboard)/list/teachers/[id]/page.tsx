@@ -17,7 +17,24 @@ const SingleTeacherPage = () => {
                             <h1 className="text-xl font-semibold">Ikechukwu Finesse</h1>
                             <p className="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                         </div>
-                        <div className="flex item-center justify-bet"></div>
+                        <div className="flex item-center justify-between gap-2 flex-wrap text-xs font-medium">
+                            <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
+                                Blood Group:
+                                <span>A+</span>
+                            </div>
+                            <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
+                                Date:
+                                <span>December 2024</span>
+                            </div>
+                            <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
+                                Mail:
+                                <span>username@email.com</span>
+                            </div>
+                            <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
+                                Phone:
+                                <span>+234 8030 001234</span>
+                            </div>
+                        </div>
                     </div>
                     {/* SMALL CARDS */}
                     <div className="flex-1"></div>
