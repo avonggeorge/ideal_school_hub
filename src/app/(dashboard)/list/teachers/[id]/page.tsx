@@ -37,7 +37,68 @@ const SingleTeacherPage = () => {
                         </div>
                     </div>
                     {/* SMALL CARDS */}
-                    <div className="flex-1"></div>
+                    <div className="flex-1 flex gap-4 justify-between flex-wrap">
+                        {/* CARD */}
+                        <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[48%] 2xl:[48%]">
+                            Single Attendance
+                            {/* <Image
+                            src="https://via.placeholder.com/150"
+                            alt="schedule"
+                            width={24}
+                            height={24}
+                            classNames="w-6 h-6"
+                            /> */}
+                            <div>
+                                <h1 className="text-xl font-semibold">90%</h1>
+                                <span className="text-sm text-gray-400">Attendance</span>
+                            </div>
+                        </div>
+                        {/* CARD */}
+                        <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[48%] 2xl:[48%]">
+                            Single Branches
+                            {/* <Image
+                            src="https://via.placeholder.com/150"
+                            alt="schedule"
+                            width={24}
+                            height={24}
+                            classNames="w-6 h-6"
+                            /> */}
+                            <div>
+                                <h1 className="text-xl font-semibold">2</h1>
+                                <span className="text-sm text-gray-400">Branches</span>
+                            </div>
+                        </div>
+                        {/* CARD */}
+                        <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[48%] 2xl:[48%]">
+                            Single Lessons
+                            {/* <Image
+                            src="https://via.placeholder.com/150"
+                            alt="schedule"
+                            width={24}
+                            height={24}
+                            classNames="w-6 h-6"
+                            /> */}
+                            <div>
+                                <h1 className="text-xl font-semibold">2</h1>
+                                <span className="text-sm text-gray-400">Lessons</span>
+                            </div>
+                        </div>
+                        {/* CARD */}
+                        <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[48%] 2xl:[48%]">
+                            Single Classes
+                            {/* <Image
+                            src="https://via.placeholder.com/150"
+                            alt="schedule"
+                            width={24}
+                            height={24}
+                            classNames="w-6 h-6"
+                            /> */}
+                            <div>
+                                <h1 className="text-xl font-semibold">2</h1>
+                                <span className="text-sm text-gray-400">Classes</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 {/* BOTTOM */}
                 <div className="">Schedule</div>
