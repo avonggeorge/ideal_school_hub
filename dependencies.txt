@@ -18,3 +18,12 @@ npm install @fullcalendar/react @fullcalendar/daygrid @fullcalendar/timegrid @fu
 
 fobt import
 @import "@fontsource/bangers"; 
+
+Prisma
+npm i prisma
+
+npx prisma init
+
+npm install @prisma/client
+
+npx prisma generate
