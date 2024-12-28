@@ -1,7 +1,8 @@
 import Pagination from "@/components/Pagination";
+import FormModal from "@/components/FormModal";
 import TableSearch from "@/components/TableSearch";
 import Table from "@/components/Table";
-import Link from "next/link";
+import Image from "next/image";
 import { role, subjectsData } from "@/lib/data";
 
 type Subject = {
@@ -27,10 +28,7 @@ const columns = [
 ];
 
 const SubjectListPage = () => {
-    const role = "admin"; // Define the role variable as needed
-
-    const renderRow = (item: Subject) => {
-        return (
+    const renderRow = (item: Subject) => (
             <tr key={item.id} className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-lamaPurpleLight">
                 <td className="flex items-center gap-4 p-4">{item.name}</td>
                 <td className="hidden md:table-cell">{item.teachers.join(",")}</td>

@@ -1,12 +1,11 @@
+import FormModal from "@/components/FormModal";
 import Pagination from "@/components/Pagination";
 import TableSearch from "@/components/TableSearch";
 import Table from "@/components/Table";
 import Link from "next/link";
-<<<<<<< HEAD
-import { announcementsData, } from "@/lib/data";
-=======
-import { announcementsData, eventsData,  role, } from "@/lib/data";
->>>>>>> 982bf8a69cd1ce270c3b8f62b81bc2ffd2166bc6
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSort, faFilter } from '@fortawesome/free-solid-svg-icons';
+import { announcementsData, role } from "@/lib/data";
 
 type Announcement = {
     id: number;
@@ -18,11 +17,7 @@ type Announcement = {
 const columns = [
     {
         header: "Title",
-<<<<<<< HEAD
         accessor: "title",
-=======
-        accessor: "tittle",
->>>>>>> 982bf8a69cd1ce270c3b8f62b81bc2ffd2166bc6
     },
     {
         header: "Class",
@@ -40,10 +35,8 @@ const columns = [
     },
 ];
 
-const AnnouncementListPage = () => {
-    const role = "admin"; // Define the role variable as needed
-
-    const renderRow = (item: Announcement) => {
+const AnnouncementListPage = () => { 
+   const renderRow = (item: Announcement) => {
         return (
             <tr key={item.id} className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-lamaPurpleLight">
                 <td className="flex items-center gap-4 p-4">{item.title}</td>
@@ -70,7 +63,8 @@ const AnnouncementListPage = () => {
     return (
         <div className="bg-white p-4 rounded-md flex-1 m-4 mt-0">
             {/* TOP */}
-            <div className="flex item-center justify-between">
+            <div className="flex 
+items-center justify-between">
                 <h1 className="hidden md:block text-lg font-semibold">All Announcements</h1>
                 <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
                     <div className="ml-auto">
@@ -78,18 +72,25 @@ const AnnouncementListPage = () => {
                     </div>
                     <div className="w-8 h-8 flex items-center justify-center rounded-full">
                         <button>
-                            <span className="text-sm font-medium">Filter</span>
+                            
+<FontAwesomeIcon icon={faFilter} style={{ width: '14px', height: '14px' }} />
+
                         </button>
                     </div>
                     <div className="w-8 h-8 flex items-center justify-center rounded-full">
                         <button>
-                            <span className="text-sm font-medium">Sort</span>
+                            
+<FontAwesomeIcon icon={faFilter} style={{ width: '14px', height: '14px' }} />
                         </button>
                     </div>
                     <div className="w-8 h-8 flex items-center justify-center rounded-full">
-                        <button>
-                            <span className="text-sm font-medium">Add</span>
-                        </button>
+                    <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
+              
+<FontAwesomeIcon icon={faSort} style={{ width: '14px', height: '14px' }} />
+            </button>
+                         {role === "admin" && (
+              <FormModal table="announcement" type="create" />
+            )}
                     </div>
                 </div>
             </div>

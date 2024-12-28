@@ -1,4 +1,15 @@
-import React from "react";
+import Announcements from "@/components/Announcements";
+import BigCalendar from "@/components/BigCalender";
+import FormModal from "@/components/FormModal";
+import Performance from "@/components/Performance";
+import { role } from "@/lib/data";
+import Image from "next/image";
+import Link from "next/link";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBook, faBuilding, faCalendarAlt, faFilter, faPhone, faPlus, faSort, faUserCheck } from '@fortawesome/free-solid-svg-icons';
+import { faTint } from "@fortawesome/free-solid-svg-icons/faTint";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons/faEnvelope";
+import { faChalkboard } from "@fortawesome/free-solid-svg-icons/faChalkboard";
 
 
 const SingleTeacherPage = () => {
@@ -11,7 +22,13 @@ const SingleTeacherPage = () => {
                     {/* USER INFO CARD*/}
                     <div className="bg-brown py-6 px-4 rounded-md flex-1 flex gap-4">
                         <div className="w-1/3">
-                            {/* <Image src="" alt="pic" width={144} height={144} className="w-36 h-36 rounded-full object-cover"/> */}
+                            <Image
+                src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt=""
+                width={144}
+                height={144}
+                className="w-36 h-36 rounded-full object-cover"
+              />
                         </div>
                         <div className="w-2/3 flex flex-col justify-between gap-4">
                             <h1 className="text-xl font-semibold">Ikechukwu Finesse</h1>
@@ -36,19 +53,19 @@ const SingleTeacherPage = () => {
                         </div>
                         <div className="flex item-center justify-between gap-2 flex-wrap text-xs font-medium">
                             <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
-                                Blood Group:
+                                <FontAwesomeIcon icon={faTint} style={{ width: '14px', height: '14px', color: 'red' }} />
                                 <span>A+</span>
                             </div>
                             <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
-                                Date:
+                                <FontAwesomeIcon icon={faCalendarAlt} style={{ width: '14px', height: '14px', color: 'gray' }} />
                                 <span>December 2024</span>
                             </div>
                             <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
-                                Mail:
+                                <FontAwesomeIcon icon={faEnvelope} style={{ width: '14px', height: '14px', color: 'blue' }} />
                                 <span>username@email.com</span>
                             </div>
                             <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
-                                Phone:
+                                <FontAwesomeIcon icon={faPhone} style={{ width: '14px', height: '14px', color: 'green' }} />
                                 <span>+234 8030 001234</span>
                             </div>
                         </div>
@@ -56,8 +73,8 @@ const SingleTeacherPage = () => {
                     {/* SMALL CARDS */}
                     <div className="flex-1 flex gap-4 justify-between flex-wrap">
                         {/* CARD */}
-                        <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[48%] 2xl:[48%]">
-                            Single Attendance
+                        <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:[48%]">
+                            <FontAwesomeIcon icon={faUserCheck} className="w-6 h-6 text-blue-500" style={{ width: '14px', height: '14px' }} />
                             {/* <Image
                             src="https://via.placeholder.com/150"
                             alt="schedule"
@@ -72,7 +89,7 @@ const SingleTeacherPage = () => {
                         </div>
                         {/* CARD */}
                         <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[48%] 2xl:[48%]">
-                            Single Branches
+                             <FontAwesomeIcon icon={faBuilding} className="w-6 h-6 text-yellow-500" style={{ width: '14px', height: '14px' }} />
                             {/* <Image
                             src="https://via.placeholder.com/150"
                             alt="schedule"
@@ -87,7 +104,7 @@ const SingleTeacherPage = () => {
                         </div>
                         {/* CARD */}
                         <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[48%] 2xl:[48%]">
-                            Single Lessons
+                             <FontAwesomeIcon icon={faBook} className="w-6 h-6 text-purple-500" style={{ width: '14px', height: '14px' }} />
                             {/* <Image
                             src="https://via.placeholder.com/150"
                             alt="schedule"
@@ -102,7 +119,7 @@ const SingleTeacherPage = () => {
                         </div>
                         {/* CARD */}
                         <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[48%] 2xl:[48%]">
-                            Single Classes
+                             <FontAwesomeIcon icon={faChalkboard} className="w-6 h-6 text-green-500" style={{ width: '14px', height: '14px' }} />
                             {/* <Image
                             src="https://via.placeholder.com/150"
                             alt="schedule"

@@ -2,6 +2,8 @@ import Pagination from "@/components/Pagination";
 import TableSearch from "@/components/TableSearch";
 import Table from "@/components/Table";
 import Link from "next/link";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFilter, faSort, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { assignmentsData, examsData, lessonsData, role, subjectsData } from "@/lib/data";
 
 type Assignment = {
@@ -68,25 +70,32 @@ const AssignmentListPage = () => {
     return (
         <div className="bg-white p-4 rounded-md flex-1 m-4 mt-0">
             {/* TOP */}
-            <div className="flex item-center justify-between">
+            <div className="flex 
+items-center justify-between">
                 <h1 className="hidden md:block text-lg font-semibold">All Assignments</h1>
                 <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
                     <div className="ml-auto">
                         <TableSearch />
                     </div>
                     <div className="w-8 h-8 flex items-center justify-center rounded-full">
-                        <button>
-                            <span className="text-sm font-medium">Filter</span>
+                         <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
+                            
+<FontAwesomeIcon icon={faFilter} style={{ width: '14px', height: '14px' }} />
+
                         </button>
                     </div>
                     <div className="w-8 h-8 flex items-center justify-center rounded-full">
-                        <button>
-                            <span className="text-sm font-medium">Sort</span>
+                         <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
+                            
+<FontAwesomeIcon icon={faSort} style={{ width: '14px', height: '14px' }} />
+
                         </button>
                     </div>
                     <div className="w-8 h-8 flex items-center justify-center rounded-full">
-                        <button>
-                            <span className="text-sm font-medium">Add</span>
+                         <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
+                            
+<FontAwesomeIcon icon={faPlus} style={{ width: '14px', height: '14px' }} />
+
                         </button>
                     </div>
                 </div>
