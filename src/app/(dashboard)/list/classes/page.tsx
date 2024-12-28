@@ -1,11 +1,8 @@
-"use client"; // Add this directive at the top
-
 import Pagination from "@/components/Pagination";
 import TableSearch from "@/components/TableSearch";
 import Table from "@/components/Table";
 import Link from "next/link";
-import { useState } from "react"; // Import React hooks if using state
-import { classesData, role, subjectsData } from "@/lib/data";
+import { classesData } from "@/lib/data";
 
 type Classes = {
     id: number;
@@ -44,7 +41,7 @@ const columns = [
 const ClassListPage = () => {
     const role = "admin"; // Define the role variable as needed
 
-    const renderRow = (item: Class) => {
+    const renderRow = (item: Classes) => {
         return (
             <tr key={item.id} className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-lamaPurpleLight">
                 <td className="flex items-center gap-4 p-4">{item.name}</td>

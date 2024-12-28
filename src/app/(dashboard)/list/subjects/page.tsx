@@ -1,10 +1,7 @@
-"use client"; // Add this directive at the top
-
 import Pagination from "@/components/Pagination";
 import TableSearch from "@/components/TableSearch";
 import Table from "@/components/Table";
 import Link from "next/link";
-import { useState } from "react"; // Import React hooks if using state
 import { role, subjectsData } from "@/lib/data";
 
 type Subject = {

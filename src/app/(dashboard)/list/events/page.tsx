@@ -18,8 +18,8 @@ type Event = {
 
 const columns = [
     {
-        header: "Tttle",
-        accessor: "tittle",
+        header: "Title",
+        accessor: "title",
     },
     {
         header: "Class",

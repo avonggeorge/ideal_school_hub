@@ -1,13 +1,10 @@
-"use client"; // Add this directive at the top
-
 import Pagination from "@/components/Pagination";
 import TableSearch from "@/components/TableSearch";
 import Table from "@/components/Table";
 import Link from "next/link";
-import { useState } from "react"; // Import React hooks if using state
-import { announcementsData, eventsData,  role, } from "@/lib/data";
+import { announcementsData, } from "@/lib/data";
 
-type Event = {
+type Announcement = {
     id: number;
     title: string;
     class: string;
@@ -16,8 +13,8 @@ type Event = {
 
 const columns = [
     {
-        header: "Tttle",
-        accessor: "tittle",
+        header: "Title",
+        accessor: "title",
     },
     {
         header: "Class",

@@ -14,7 +14,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { faFaceFrown } from "@fortawesome/free-solid-svg-icons/faFaceFrown";
+
 
 const data = [
   {
