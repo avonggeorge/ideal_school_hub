@@ -21,14 +21,14 @@ const schema = z.object({
   phone: z.string().min(1, { message: "Please enter your phone number!" }),
   address: z.string().min(1, { message: "Please enter your address!" }),
   bloodType: z.string().min(1, { message: "Please enter your Blood Type!" }),
-  birthdate: z.date({ message: "Please enter your Birth date!" }),
+  birthday: z.date({ message: "Please enter your Birth date!" }),
   sex: z.enum(["male", "female"], { message: "Please select your Sex!" }),
   img: z.instanceof(File, { message: "Please upload your image!" }),
 });
 
 type Inputs = z.infer<typeof schema>;
 
-const StudentForm = ({
+const TeacherForm = ({
   type,
   data,
 }: {
@@ -163,4 +163,4 @@ const StudentForm = ({
   );
 };
 
-export default StudentForm;
+export default TeacherForm;
