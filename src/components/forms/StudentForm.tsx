@@ -1,8 +1,8 @@
 "use client";
 
+import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 import InputField from "../InputField";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
@@ -16,14 +16,14 @@ const schema = z.object({
   password: z
     .string()
     .min(8, { message: "Password must be at least 8 characters long!" }),
-  firstName: z.string().min(1, { message: "First name is required!" }),
-  lastName: z.string().min(1, { message: "Last name is required!" }),
-  phone: z.string().min(1, { message: "Phone is required!" }),
-  address: z.string().min(1, { message: "Address is required!" }),
-  bloodType: z.string().min(1, { message: "Blood Type is required!" }),
-  birthday: z.date({ message: "Birthday is required!" }),
-  sex: z.enum(["male", "female"], { message: "Sex is required!" }),
-  img: z.instanceof(File, { message: "Image is required" }),
+  firstName: z.string().min(1, { message: "Please enter your first name!" }),
+  lastName: z.string().min(1, { message: "Please enter your last name!" }),
+  phone: z.string().min(1, { message: "Please enter your phone number!" }),
+  address: z.string().min(1, { message: "Please enter your address!" }),
+  bloodType: z.string().min(1, { message: "Please enter your Blood Type!" }),
+  birthdate: z.date({ message: "Please enter your Birth date!" }),
+  sex: z.enum(["male", "female"], { message: "Please select your Sex!" }),
+  img: z.instanceof(File, { message: "Please upload your image!" }),
 });
 
 type Inputs = z.infer<typeof schema>;
@@ -49,7 +49,7 @@ const StudentForm = ({
 
   return (
     <form className="flex flex-col gap-8" onSubmit={onSubmit}>
-      <h1 className="text-xl font-semibold">Create a new student</h1>
+      <h1 className="text-xl font-semibold">Create a new teacher</h1>
       <span className="text-xs text-gray-400 font-medium">
         Authentication Information
       </span>
@@ -117,11 +117,11 @@ const StudentForm = ({
           error={errors.bloodType}
         />
         <InputField
-          label="Birthday"
-          name="birthday"
-          defaultValue={data?.birthday}
+          label="Birthdate"
+          name="birthdate"
+          defaultValue={data?.birthdate}
           register={register}
-          error={errors.birthday}
+          error={errors.birthdate}
           type="date"
         />
         <div className="flex flex-col gap-2 w-full md:w-1/4">
@@ -145,7 +145,7 @@ const StudentForm = ({
             className="text-xs text-gray-500 flex items-center gap-2 cursor-pointer"
             htmlFor="img"
           >
-            <FontAwesomeIcon icon={faCloudUploadAlt} width={28} height={28} />
+            <FontAwesomeIcon icon={faCloudUploadAlt} width={28} height={28}/>
             <span>Upload a photo</span>
           </label>
           <input type="file" id="img" {...register("img")} className="hidden" />
