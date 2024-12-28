@@ -2,7 +2,11 @@ import Pagination from "@/components/Pagination";
 import TableSearch from "@/components/TableSearch";
 import Table from "@/components/Table";
 import Link from "next/link";
+<<<<<<< HEAD
 import { announcementsData, } from "@/lib/data";
+=======
+import { announcementsData, eventsData,  role, } from "@/lib/data";
+>>>>>>> 982bf8a69cd1ce270c3b8f62b81bc2ffd2166bc6
 
 type Announcement = {
     id: number;
@@ -14,7 +18,11 @@ type Announcement = {
 const columns = [
     {
         header: "Title",
+<<<<<<< HEAD
         accessor: "title",
+=======
+        accessor: "tittle",
+>>>>>>> 982bf8a69cd1ce270c3b8f62b81bc2ffd2166bc6
     },
     {
         header: "Class",
