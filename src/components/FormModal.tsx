@@ -1,12 +1,9 @@
-"use client"
+"use client";
 
 import dynamic from "next/dynamic";
-import Image from "next/image";
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmarkCircle } from "@fortawesome/free-solid-svg-icons";
-import { faXmark } from "@fortawesome/free-solid-svg-icons/faXmark";
-import { faXmarkSquare } from "@fortawesome/free-solid-svg-icons/faXmarkSquare";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCloudUploadAlt, faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 // USE LAZY LOADING
 
@@ -19,6 +16,12 @@ const TeacherForm = dynamic(() => import("./forms/TeacherForm"), {
 const StudentForm = dynamic(() => import("./forms/StudentForm"), {
   loading: () => <h1>Loading...</h1>,
 });
+
+const iconMap: Record<string, any> = {
+  create: faCloudUploadAlt, // Icon for creating
+  update: faEdit,          // Icon for updating
+  delete: faTrashAlt,      // Icon for deleting
+};
 
 const forms: {
   [key: string]: (type: "create" | "update", data?: any) => JSX.Element;
@@ -53,10 +56,10 @@ const FormModal = ({
   const size = type === "create" ? "w-8 h-8" : "w-7 h-7";
   const bgColor =
     type === "create"
-      ? "bg-colorPinkLight"
+      ? "bg-lamaYellow"
       : type === "update"
-      ? "bg-colorBlue"
-      : "bg-colorMintGreen";
+      ? "bg-lamaSky"
+      : "bg-lamaPurple";
 
   const [open, setOpen] = useState(false);
 
@@ -83,7 +86,8 @@ const FormModal = ({
         className={`${size} flex items-center justify-center rounded-full ${bgColor}`}
         onClick={() => setOpen(true)}
       >
-        <Image src={`/${type}.png`} alt="" width={16} height={16} />
+
+        <FontAwesomeIcon icon={iconMap[type]} />
       </button>
       {open && (
         <div className="w-screen h-screen absolute left-0 top-0 bg-black bg-opacity-60 z-50 flex items-center justify-center">
@@ -93,11 +97,7 @@ const FormModal = ({
               className="absolute top-4 right-4 cursor-pointer"
               onClick={() => setOpen(false)}
             >
-
-                <FontAwesomeIcon
-                        icon={faXmarkSquare}
-                        style={{ color: "#808080", width: '14px', height: '14px' }}  size="2x"
-                        />
+            <FontAwesomeIcon icon={faTrashAlt} style={{ width: '14px', height: '14px' }} />
             </div>
           </div>
         </div>
