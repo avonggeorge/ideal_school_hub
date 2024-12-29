@@ -43,7 +43,7 @@ const columns = [
 
 const ParentListPage = () => {
       const renderRow = (item: Parent) => (
-            <tr key={item.id} className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-lamaPurpleLight">
+            <tr key={item.id} className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-colorMintGreen">
                 <td>
                     <div className="flex flex-col">
                         <h3 className="font-semibold">{item.name}</h3>
@@ -74,10 +74,10 @@ const ParentListPage = () => {
                 <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
                         <TableSearch />
                     <div className="flex items-center gap-4 self-end">
-            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
+            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-colorBlue">
                             <FontAwesomeIcon icon={faFilter} style={{ width: '14px', height: '14px' }} />
                         </button>
-                    <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
+                    <button className="w-8 h-8 flex items-center justify-center rounded-full bg-colorBlue">
                             <FontAwesomeIcon icon={faSort} style={{ width: '14px', height: '14px' }} />
                         </button>
                     {role === "admin" && (

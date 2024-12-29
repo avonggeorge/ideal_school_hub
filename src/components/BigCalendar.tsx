@@ -6,7 +6,6 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import { calendarEvents } from "@/lib/data"; // Your event data
 
-// Define your color palette
 const colorPalette = [
   "#CEF0D1", // colorMintGreen
   "#F5FCF6", // colorMintGreenLight
@@ -16,7 +15,6 @@ const colorPalette = [
   "#EFF2FB", // colorWhite
 ];
 
-// Function to get a random color from the palette
 const getRandomColor = () => {
   const randomIndex = Math.floor(Math.random() * colorPalette.length);
   return colorPalette[randomIndex];
@@ -30,75 +28,76 @@ const BigCalendar = () => {
   };
 
   return (
-    <FullCalendar
-      contentHeight="auto"
-      plugins={[timeGridPlugin, interactionPlugin]}
-      events={calendarEvents} // Your event data
-      initialView={currentView}
-      eventBorderColor="#2B92E4" // Keep border color consistent
-      eventTextColor="#5C3B00" // Text color for events
-      eventDisplay="block" // Display as a block to make the event visible
-      headerToolbar={{
-        left: "prev,next today",
-        center: "title",
-        right: "week,day",
-      }}
-      weekends={false} // Hide weekends
-      hiddenDays={[0, 6]} // Hide weekends (0 is Sunday, 6 is Saturday)
-      firstDay={1} // Week starts on Monday
-      slotMinTime="08:00:00" // Set the minimum time for the calendar
-      slotMaxTime="17:00:00" // Set the maximum time for the calendar
-      allDaySlot={false} // Hide the all-day slot
-      slotLabelFormat={{
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: true,
-      }}
-      viewDidMount={(viewInfo) => {
-        const calendarApi = viewInfo.view.calendar;
-        calendarApi.setOption("hiddenDays", [0, 6]);
-        calendarApi.setOption("firstDay", 1);
-      }}
-      views={{
-        week: {
-          type: "timeGridWeek",
-          buttonText: "Week",
-        },
-        day: {
-          type: "timeGridDay",
-          buttonText: "Day",
-        },
-      }}
-      
-      eventContent={(eventInfo) => {
-  const startTime = eventInfo.event.start
-    ? eventInfo.event.start.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-    : "No start time";
+    <div className="w-full max-w-screen-md mx-auto sm:px-4 lg:max-w-screen-lg">
+      <FullCalendar
+        contentHeight="auto" // Auto height to adjust dynamically
+        plugins={[timeGridPlugin, interactionPlugin]}
+        events={calendarEvents}
+        initialView={currentView}
+        eventBorderColor="#2B92E4"
+        eventTextColor="#5C3B00"
+        eventDisplay="block"
+        headerToolbar={{
+          left: "prev,next today",
+          center: "title",
+          right: "week,day",
+        }}
+        weekends={false}
+        hiddenDays={[0, 6]}
+        firstDay={1}
+        slotMinTime="08:00:00"
+        slotMaxTime="17:00:00"
+        allDaySlot={false}
+        slotLabelFormat={{
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: true,
+        }}
+        height="100%" // Allow FullCalendar to expand based on the container height
+        views={{
+          week: {
+            type: "timeGridWeek",
+            buttonText: "Week",
+          },
+          day: {
+            type: "timeGridDay",
+            buttonText: "Day",
+          },
+        }}
+        eventContent={(eventInfo) => {
+          const startTime = eventInfo.event.start
+            ? eventInfo.event.start.toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+              })
+            : "No start time";
 
-  const endTime = eventInfo.event.end
-    ? eventInfo.event.end.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-    : "No end time";
+          const endTime = eventInfo.event.end
+            ? eventInfo.event.end.toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+              })
+            : "No end time";
 
-  return (
-    <div className="text-sm md:text-base font-semibold">
-      <strong>{startTime} - {endTime}</strong>
-      <br />
-      {eventInfo.event.title}
+          return (
+            <div className="text-xs md:text-sm font-semibold">
+              <strong>
+                {startTime} - {endTime}
+              </strong>
+              <br />
+              {eventInfo.event.title}
+            </div>
+          );
+        }}
+        eventDataTransform={(eventData) => {
+          eventData.backgroundColor = getRandomColor();
+          return eventData;
+        }}
+        eventClassNames="text-sm" // Event text size for smaller screens
+        slotLabelClassNames="text-sm font-medium" // Time slot text size
+        dayHeaderClassNames="text-sm font-medium" // Header text size
+      />
     </div>
-  );
-}}
-
-      height="98%"
-      eventDataTransform={(eventData) => {
-        eventData.backgroundColor = getRandomColor();
-        return eventData;
-      }}
-      // Apply responsive styles for FullCalendar
-      eventClassNames="text-xl" // Event text size
-      slotLabelClassNames="text-xl font-semibold" // Time slot text size
-      dayHeaderClassNames="text-xl font-semibold" // Header text size
-      // Adding Tailwind responsive utilities to adjust the calendar layout
-    />
   );
 };
 

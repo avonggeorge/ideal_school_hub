@@ -1,5 +1,3 @@
-import { ReactElement } from "react";
-
 const  Table = ({
     columns,
     renderRow,

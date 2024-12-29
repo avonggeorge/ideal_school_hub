@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCloudUploadAlt, faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faClose, faCloudUploadAlt, faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 // USE LAZY LOADING
 
@@ -17,6 +17,7 @@ const StudentForm = dynamic(() => import("./forms/StudentForm"), {
   loading: () => <h1>Loading...</h1>,
 });
 
+
 const iconMap: Record<string, any> = {
   create: faCloudUploadAlt, // Icon for creating
   update: faEdit,          // Icon for updating
@@ -28,6 +29,12 @@ const forms: {
 } = {
   teacher: (type, data) => <TeacherForm type={type} data={data} />,
   student: (type, data) => <StudentForm type={type} data={data} />
+};
+
+const iconStyles = {
+  create: "text-green-500", // Green for create
+  update: "text-blue-500",  // Blue for update
+  delete: "text-red-500",   // Red for delete
 };
 
 const FormModal = ({
@@ -56,10 +63,10 @@ const FormModal = ({
   const size = type === "create" ? "w-8 h-8" : "w-7 h-7";
   const bgColor =
     type === "create"
-      ? "bg-lamaYellow"
+      ? "bg-colorBlue"
       : type === "update"
-      ? "bg-lamaSky"
-      : "bg-lamaPurple";
+      ? "bg-colorBlueLight"
+      : "bg-colorMintGreenLight";
 
   const [open, setOpen] = useState(false);
 
@@ -86,8 +93,10 @@ const FormModal = ({
         className={`${size} flex items-center justify-center rounded-full ${bgColor}`}
         onClick={() => setOpen(true)}
       >
-
-        <FontAwesomeIcon icon={iconMap[type]} />
+        <FontAwesomeIcon
+          icon={iconMap[type]}
+          className={iconStyles[type]} // Apply dynamic icon color
+        />
       </button>
       {open && (
         <div className="w-screen h-screen absolute left-0 top-0 bg-black bg-opacity-60 z-50 flex items-center justify-center">
@@ -97,7 +106,7 @@ const FormModal = ({
               className="absolute top-4 right-4 cursor-pointer"
               onClick={() => setOpen(false)}
             >
-            <FontAwesomeIcon icon={faTrashAlt} style={{ width: '14px', height: '14px' }} />
+              <FontAwesomeIcon icon={faClose} style={{ width: '14px', height: '14px' }} />
             </div>
           </div>
         </div>
@@ -105,5 +114,6 @@ const FormModal = ({
     </>
   );
 };
+
 
 export default FormModal;

@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons"; // Ensure the correct icon name is used
+import { faSearch } from "@fortawesome/free-solid-svg-icons/faSearch";
 
 const TableSearch = () => {
     return (
         <div className='w-full md:auto flex items-center gap-2 text-xs rounded-full ring-[1.5px] ring-gray-300 px-2'>
-            <FontAwesomeIcon icon={faCalendarAlt} color="#ADD8E6" size="lg" />
+            <FontAwesomeIcon icon={faSearch} color="#ADD8E6" size="lg" />
             <input
                 type="text"
                 placeholder="Search..."

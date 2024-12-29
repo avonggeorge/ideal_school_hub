@@ -7,6 +7,7 @@ import Image from "next/image";
 import { faFilter, faSort, faEye } from '@fortawesome/free-solid-svg-icons';
 import { role, studentsData } from "@/lib/data";
 import Link from "next/link";
+import { faUserAlt } from "@fortawesome/free-solid-svg-icons/faUserAlt";
 
 type Student = {
     studentID: string;
@@ -55,29 +56,31 @@ const StudentListPage = () => {
   const renderRow = (item: Student) => (
     <tr
       key={item.id}
-      className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-lamaPurpleLight"
+      className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-colorMintGreen"
     >
       <td className="flex items-center gap-4 p-4">
-        <Image
-  src={item.photo || "/default-avatar.png"} // Fallback to default if no photo
-  alt={item.name || "Student Photo"}
-  width={40}
-  height={40}
-  className="md:hidden xl:block w-10 h-10 rounded-full object-cover"
-/>
+
+   <Image
+          src={item.photo}
+          alt=""
+          width={40}
+          height={40}
+          className="md:hidden xl:block w-10 h-10 rounded-full object-cover"
+        />
+
         <div className="flex flex-col">
           <h3 className="font-semibold">{item.name}</h3>
           <p className="text-xs text-gray-500">{item.class}</p>
         </div>
       </td>
-      <td className="hidden md:table-cell">{item.studentId}</td>
+      <td className="hidden md:table-cell">{item.studentID}</td>
       <td className="hidden md:table-cell">{item.grade}</td>
       <td className="hidden md:table-cell">{item.phone}</td>
       <td className="hidden md:table-cell">{item.address}</td>
       <td>
         <div className="flex items-center gap-2">
           <Link href={`/list/teachers/${item.id}`}>
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaSky">
+            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-colorBlueLight">
               <FontAwesomeIcon icon={faEye} style={{ width: '16px', height: '16px' }} />
             </button>
           </Link>
@@ -97,10 +100,10 @@ const StudentListPage = () => {
         <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
                         <TableSearch />
                     <div className="flex items-center gap-4 self-end">
-                        <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
+                        <button className="w-8 h-8 flex items-center justify-center rounded-full bg-colorBlue">
                             <FontAwesomeIcon icon={faFilter} style={{ width: '14px', height: '14px' }} />
                         </button>
-                     <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
+                     <button className="w-8 h-8 flex items-center justify-center rounded-full bg-colorBlue">
                             <FontAwesomeIcon icon={faSort} style={{ width: '14px', height: '14px' }} />
                         </button>
                     {role === "admin" && (

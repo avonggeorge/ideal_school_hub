@@ -54,7 +54,7 @@ const columns = [
 
 const ResultListPage = () => {
     const renderRow = (item: Result) => (
-            <tr key={item.id} className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-lamaPurpleLight">
+            <tr key={item.id} className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-colorMintGreen">
                 <td className="flex items-center gap-4 p-4">{item.subject}</td>
                 <td>{item.student}</td>
                 <td className="hidden md:table-cell">{item.score}</td>
@@ -82,10 +82,10 @@ const ResultListPage = () => {
                 <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
                         <TableSearch />
                     <div className="flex items-center gap-4 self-end">
-            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
+            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-colorBlue">
                             <FontAwesomeIcon icon={faFilter} style={{ width: '14px', height: '14px' }} />
                         </button>
-                     <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
+                     <button className="w-8 h-8 flex items-center justify-center rounded-full bg-colorBlue">
                             <FontAwesomeIcon icon={faSort} style={{ width: '14px', height: '14px' }} />
                         </button>
                      {role === "admin" || role === "teacher" && <FormModal table="result" type="create" />}
