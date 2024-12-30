@@ -19,14 +19,19 @@
     "@fullcalendar/moment": "^6.1.15",
     "@fullcalendar/react": "^6.1.15",
     "@fullcalendar/timegrid": "^6.1.15",
-
+    "@hookform/resolvers": "^3.9.1",
+    "@prisma/client": "^6.1.0",
     "next": "^15.1.0",
+    "prisma": "^6.1.0",
     "react": "^18.3.1",
     "react-big-calendar": "^1.17.0",
     "react-calendar": "^5.1.0",
     "react-dom": "^18.3.1",
+    "react-hook-form": "^7.54.2",
     "react-is": "^19.0.0",
-    "recharts": "^2.15.0"
+    "recharts": "^2.15.0",
+    "ts-node": "^10.9.2",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@next/swc-linux-x64-gnu": "^15.1.0",
@@ -38,5 +43,8 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
+  },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   }
 }

@@ -18,3 +18,36 @@ npm install @fullcalendar/react @fullcalendar/daygrid @fullcalendar/timegrid @fu
 
 font import
 @import "@fontsource/bangers"; 
+
+Prisma
+'npm i prisma
+
+npx prisma init
+
+npm install @prisma/client
+
+npx prisma generate'
+
+links prisma to railway
+npx prisma migrate dev --name init
+
+loads the database on website "http://localhost:5555"
+npx prisma studio
+
+
+database seeding
+prisma db seeding
+
+prisma migrate reset
+
+prisma migrate dev
+
+
+install typescript and types/node
+npm i -d ts-node
+
+npx prisma db seed: if you have problem here, delete the .next file and restart your app    ***It runs a seeding script, which inserts default or initial data into your database.***
+
+
+React hook
+npm i react-hook-form zod @hookform/resolvers
