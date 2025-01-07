@@ -4,8 +4,8 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import InputField from "../InputField";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCloudUploadAlt } from "@fortawesome/free-solid-svg-icons";
 
 const schema = z.object({
   username: z
@@ -44,13 +44,15 @@ const TeacherForm = ({
     resolver: zodResolver(schema),
   });
 
-  const onSubmit = handleSubmit((data) => {
-    console.log(data);
+  const onSubmit = handleSubmit((formData) => {
+    console.log(formData);
   });
 
   return (
     <form className="flex flex-col gap-8" onSubmit={onSubmit}>
-      <h1 className="text-xl font-semibold">Create a new teacher</h1>
+      <h1 className="text-xl font-semibold">
+        {type === "create" ? "Create a New Teacher" : "Update Teacher Info"}
+      </h1>
       <span className="text-xs text-gray-400 font-medium">
         Authentication Information
       </span>
@@ -136,9 +138,7 @@ const TeacherForm = ({
             <option value="female">Female</option>
           </select>
           {errors.sex?.message && (
-            <p className="text-xs text-red-400">
-              {errors.sex.message.toString()}
-            </p>
+            <p className="text-xs text-red-400">{errors.sex.message}</p>
           )}
         </div>
         <div className="flex flex-col gap-2 w-full md:w-1/4 justify-center">
@@ -146,14 +146,12 @@ const TeacherForm = ({
             className="text-xs text-gray-500 flex items-center gap-2 cursor-pointer"
             htmlFor="img"
           >
-            <FontAwesomeIcon icon={faCloudUploadAlt} width={28} height={28}/>
+            <FontAwesomeIcon icon={faCloudUploadAlt} width={28} height={28} />
             <span>Upload a photo</span>
           </label>
           <input type="file" id="img" {...register("img")} className="hidden" />
           {errors.img?.message && (
-            <p className="text-xs text-red-400">
-              {errors.img.message.toString()}
-            </p>
+            <p className="text-xs text-red-400">{errors.img.message}</p>
           )}
         </div>
       </div>
