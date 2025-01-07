@@ -2,7 +2,7 @@ import { Day, PrismaClient, UserSex } from "@prisma/client";
 const prisma = new PrismaClient();
 
 async function main() {
-  // ADMIN
+ // ADMIN
   await prisma.admin.create({
     data: {
       id: "admin1",
@@ -15,6 +15,9 @@ async function main() {
       username: "admin2",
     },
   });
+
+
+
 
   // GRADE
   for (let i = 1; i <= 6; i++) {

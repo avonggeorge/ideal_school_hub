@@ -21,12 +21,8 @@ const schema = z.object({
   phone: z.string().min(1, { message: "Please enter your phone number!" }),
   address: z.string().min(1, { message: "Please enter your address!" }),
   bloodType: z.string().min(1, { message: "Please enter your Blood Type!" }),
-<<<<<<< HEAD
   
 birthdate: z.date({ message: "Please enter your Birth date!" }),
-=======
-  birthdate: z.date({ message: "Please enter your Birth date!" }),
->>>>>>> form_branch
   sex: z.enum(["male", "female"], { message: "Please select your Sex!" }),
   img: z.instanceof(File, { message: "Please upload your image!" }),
 });
