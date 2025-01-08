@@ -1,17 +1,15 @@
 import Pagination from "@/components/Pagination";
 import TableSearch from "@/components/TableSearch";
 import Image from "next/image";
-import FormModal from "@/components/FormModal";
 import Table from "@/components/Table";
 import Link from "next/link";
-import { teachersData, role } from "@/lib/data";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faFilter, faSort } from '@fortawesome/free-solid-svg-icons';
 import FormContainer from "@/components/FormContainer";
 import prisma from "@/lib/prisma";
 import { Class, Prisma, Subject, Teacher } from "@prisma/client";
 import { ITEM_PER_PAGE } from "@/lib/settings";
-import { auth } from "@clerk/nextjs/server";
+// import { auth } from "@clerk/nextjs/server";
 
 type TeacherList = Teacher & { subjects: Subject[] } & { classes: Class[] };
 
@@ -20,8 +18,8 @@ const TeacherListPage = async ({
 }: {
   searchParams: { [key: string]: string | undefined };
 }) => {
-  const { sessionClaims } = auth();
-  const role = (sessionClaims?.metadata as { role?: string })?.role;
+  // const { sessionClaims } = auth();
+  // const role = (sessionClaims?.metadata as { role?: string })?.role;
 
 const columns = [
     {
@@ -53,14 +51,14 @@ const columns = [
         accessor: "address",
         className: "hidden lg:table-cell",
     },
-   ...(role === "admin"
-      ? [
+  //  ...(role === "admin"
+      // ? [
           {
             header: "Actions",
             accessor: "action",
           },
-        ]
-      : []),
+      //   ]
+      // : []),
 ];
 
 

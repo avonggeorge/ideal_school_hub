@@ -51,3 +51,7 @@ npx prisma db seed: if you have problem here, delete the .next file and restart 
 
 React hook
 npm i react-hook-form zod @hookform/resolvers
+
+
+forcefully, resets the prisma seeding
+npx prisma db push --force-reset
