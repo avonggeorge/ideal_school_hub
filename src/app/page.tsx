@@ -1,102 +1,108 @@
 import Image from "next/image";
-import { FontAwesome } from "@fortawesome/react-fontawesome"
-import { faHome, faSearch, faUser} from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUsers, faBook, faChalkboardTeacher, faUserShield } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="bg-gray-100">
+      {/* Header Section */}
+      <header className="bg-white shadow-md p-4 flex justify-between items-center">
+        <div className="flex items-center">
+          <Image src="/logo.png" alt="School Logo" width={50} height={50} />
+          <h1 className="ml-2 text-xl font-bold">School Management</h1>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <nav>
+          <ul className="flex space-x-4">
+            <li><a href="#features" className="hover:text-blue-500">Features</a></li>
+            <li><a href="#pricing" className="hover:text-blue-500">Pricing</a></li>
+            <li><a href="#testimonials" className="hover:text-blue-500">Testimonials</a></li>
+            <li><a href="#contact" className="hover:text-blue-500">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      {/* Hero Section */}
+      <section className="bg-blue-500 text-white text-center py-20">
+        <h2 className="text-4xl font-bold mb-4">Simplify School Management for Everyone</h2>
+        <p className="text-lg mb-6">Empower administrators, support teachers, engage parents, and inspire students.</p>
+        <div className="flex justify-center space-x-4">
+          <button className="bg-white text-blue-500 px-6 py-3 rounded shadow hover:bg-gray-100">Try for Free</button>
+          <button className="bg-blue-700 px-6 py-3 rounded shadow hover:bg-blue-600">Learn More</button>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id="features" className="py-16 px-4 bg-gray-100 text-center">
+        <h3 className="text-3xl font-bold mb-8">Features for Everyone</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="p-6 bg-white rounded shadow">
+            <FontAwesomeIcon icon={faUserShield} className="text-blue-500 text-4xl mb-4" />
+            <h4 className="text-xl font-bold mb-2">For Administrators</h4>
+            <p>User management, analytics, and reporting tools.</p>
+          </div>
+          <div className="p-6 bg-white rounded shadow">
+            <FontAwesomeIcon icon={faChalkboardTeacher} className="text-green-500 text-4xl mb-4" />
+            <h4 className="text-xl font-bold mb-2">For Teachers</h4>
+            <p>Gradebook, assignments, and schedule management.</p>
+          </div>
+          <div className="p-6 bg-white rounded shadow">
+            <FontAwesomeIcon icon={faBook} className="text-yellow-500 text-4xl mb-4" />
+            <h4 className="text-xl font-bold mb-2">For Students</h4>
+            <p>Personalized dashboards and academic resources.</p>
+          </div>
+          <div className="p-6 bg-white rounded shadow">
+            <FontAwesomeIcon icon={faUsers} className="text-red-500 text-4xl mb-4" />
+            <h4 className="text-xl font-bold mb-2">For Parents</h4>
+            <p>Attendance tracking and seamless communication.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-16 px-4 bg-white text-center">
+        <h3 className="text-3xl font-bold mb-8">What Our Users Say</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="p-6 border rounded">
+            <p>"This platform transformed how we manage our school!"</p>
+            <span className="block mt-4 text-sm font-bold">- School Administrator</span>
+          </div>
+          <div className="p-6 border rounded">
+            <p>"It's so easy to track grades and communicate with students."</p>
+            <span className="block mt-4 text-sm font-bold">- Teacher</span>
+          </div>
+          <div className="p-6 border rounded">
+            <p>"I love being able to see my child’s progress anytime."</p>
+            <span className="block mt-4 text-sm font-bold">- Parent</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section id="pricing" className="py-16 px-4 bg-gray-100 text-center">
+        <h3 className="text-3xl font-bold mb-8">Affordable Pricing</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="p-6 bg-white rounded shadow">
+            <h4 className="text-xl font-bold mb-4">Free</h4>
+            <p>Basic features for small schools.</p>
+            <button className="bg-blue-500 text-white px-6 py-2 rounded mt-4">Get Started</button>
+          </div>
+          <div className="p-6 bg-white rounded shadow">
+            <h4 className="text-xl font-bold mb-4">Standard</h4>
+            <p>Advanced features for medium-sized schools.</p>
+            <button className="bg-blue-500 text-white px-6 py-2 rounded mt-4">Get Started</button>
+          </div>
+          <div className="p-6 bg-white rounded shadow">
+            <h4 className="text-xl font-bold mb-4">Premium</h4>
+            <p>All features for large schools.</p>
+            <button className="bg-blue-500 text-white px-6 py-2 rounded mt-4">Get Started</button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer id="contact" className="bg-blue-500 text-white text-center py-6">
+        <p>Contact us at info@schoolmanagement.com or call +123 456 7890</p>
+        <p>&copy; {new Date().getFullYear()} School Management System</p>
       </footer>
     </div>
   );
