@@ -9,7 +9,7 @@ import Link from "next/link";
 import { ITEM_PER_PAGE } from "@/lib/settings";
 import { Class, Prisma, Student } from "@prisma/client";
 import prisma from "@/lib/prisma";
-// import { auth } from "@clerk/nextjs/server";
+import { auth } from "@clerk/nextjs/server";
 
 
 type StudentList = Student & { class: Class };
@@ -18,8 +18,8 @@ const StudentListPage = async ({
 }: {
   searchParams: { [key: string]: string | undefined };
 }) => {
-  // const { sessionClaims } = auth();
-  // const role = (sessionClaims?.metadata as { role?: string })?.role;
+  const { sessionClaims } =  await auth();
+  const role = (sessionClaims?.metadata as { role?: string })?.role;
 
 
 const columns = [
@@ -47,14 +47,14 @@ const columns = [
         accessor: "address",
         className: "hidden lg:table-cell",
     },
-    //  ...(role === "admin"
-    //   ? [
-    //       {
-    //         header: "Actions",
-    //         accessor: "action",
-    //       },
-    //     ]
-    //   : []),
+     ...(role === "admin"
+      ? [
+          {
+            header: "Actions",
+            accessor: "action",
+          },
+        ]
+      : []),
 ];
 
 
@@ -96,9 +96,9 @@ const columns = [
               <FontAwesomeIcon icon={faEye} style={{ width: '16px', height: '16px' }} />
             </button>
           </Link>
-          {/* {role === "admin" && (
+          {role === "admin" && (
             <FormContainer table="student" type="delete" id={item.id}/>
-          )} */}
+          )}
         </div>
       </td>
     </tr>
@@ -162,9 +162,9 @@ const columns = [
                      <button className="w-8 h-8 flex items-center justify-center rounded-full bg-colorBlueLight">
                             <FontAwesomeIcon icon={faSort} style={{ width: '14px', height: '14px' }} />
                         </button>
-                    {/* {role === "admin" && (
+                    {role === "admin" && (
               <FormContainer table="student" type="create"/>
-            )} */}
+            )}
           </div>
         </div>
       </div>
