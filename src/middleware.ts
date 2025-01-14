@@ -9,10 +9,10 @@ const matchers = Object.keys(routeAccessMap).map((route) => ({
 
 console.log(matchers);
 
-export default clerkMiddleware((auth, req) => {
+export default clerkMiddleware(async (auth, req) => {
   // if (isProtectedRoute(req)) auth().protect()
 
-  const { sessionClaims } = auth();
+  const { sessionClaims } = await auth();
 
   const role = (sessionClaims?.metadata as { role?: string })?.role;
 
@@ -31,3 +31,6 @@ export const config = {
     "/(api|trpc)(.*)",
   ],
 };
+
+
+
