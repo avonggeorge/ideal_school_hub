@@ -20,7 +20,11 @@ const getRandomColor = () => {
   return colorPalette[randomIndex];
 };
 
-const BigCalendar = () => {
+const BigCalendar = ({
+  data,
+}: {
+  data: { title: string; start: Date; end: Date }[];
+}) => {
   const [currentView, setCurrentView] = useState<string>("timeGridWeek");
 
   const handleViewChange = (selectedView: string) => {
