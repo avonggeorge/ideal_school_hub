@@ -1,6 +1,5 @@
 import Menu from "@/components/Menu";
 import Navbar from "@/components/Navbar";
-// import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons/faGraduationCap";
 import Link from "next/link";
@@ -19,7 +18,10 @@ export default function DashboardLayout({
           href="/"
           className="flex items-center justify-center lg:justify-start gap-2"
         >
-          <FontAwesomeIcon icon={faGraduationCap} size="3x" color="#2B92E4" />
+          <FontAwesomeIcon 
+  icon={faGraduationCap} 
+  style={{ width: '24px', height: '24px', color: '#2B92E4' }} 
+/>
           <span className="hidden lg:block text-sm md:text-base text-funky font-bold">IdealSchools</span>
         </Link>
         <Menu />
