@@ -27,7 +27,7 @@ model Student {
   parentId    String
   classId     Int
   gradeId     Int
-  birthday    DateTime
+  birthdate    DateTime
   attendances Attendance[]
   results     Result[]
   class       Class        @relation(fields: [classId], references: [id])
@@ -47,7 +47,7 @@ model Teacher {
   bloodType String
   sex       UserSex
   createdAt DateTime  @default(now())
-  birthday  DateTime
+  birthdate  DateTime
   classes   Class[]
   lessons   Lesson[]
   subjects  Subject[] @relation("SubjectToTeacher")
