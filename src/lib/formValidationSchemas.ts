@@ -40,7 +40,7 @@ export const teacherSchema = z.object({
   address: z.string(),
   img: z.string().optional(),
   bloodType: z.string().min(1, { message: "Blood Type cannot be empty!" }),
-  birthday: z.coerce.date({ message: "Birthdate cannot be empty!" }),
+  birthdate: z.coerce.date({ message: "birthdate cannot be empty!" }),
   sex: z.enum(["MALE", "FEMALE"], { message: "Sex cannot be empty!" }),
   subjects: z.array(z.string()).optional(), // subject ids
 });
@@ -69,7 +69,7 @@ export const studentSchema = z.object({
   address: z.string(),
   img: z.string().optional(),
   bloodType: z.string().min(1, { message: "Blood Type cannot be empty!" }),
-  birthday: z.coerce.date({ message: "Birthdate cannot be empty!" }),
+  birthdate: z.coerce.date({ message: "birthdate cannot be empty!" }),
   sex: z.enum(["MALE", "FEMALE"], { message: "Sex cannot be empty!" }),
   gradeId: z.coerce.number().min(1, { message: "Grade cannot be empty!" }),
   classId: z.coerce.number().min(1, { message: "Class cannot be empty!" }),
