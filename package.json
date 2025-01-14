@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/elements": "^0.22.7",
+    "@clerk/nextjs": "^6.9.9",
     "@fontsource/bangers": "^5.1.0",
     "@fortawesome/fontawesome-svg-core": "^6.7.1",
     "@fortawesome/free-solid-svg-icons": "^6.7.1",
@@ -21,7 +23,8 @@
     "@fullcalendar/timegrid": "^6.1.15",
     "@hookform/resolvers": "^3.10.0",
     "@prisma/client": "^6.1.0",
-    "next": "^15.1.0",
+    "next": "^15.1.4",
+    "next-cloudinary": "^6.16.0",
     "prisma": "^6.1.0",
     "react": "^18.3.1",
     "react-big-calendar": "^1.17.0",
@@ -29,6 +32,7 @@
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.54.2",
     "react-is": "^19.0.0",
+    "react-toastify": "^11.0.2",
     "recharts": "^2.15.0",
     "ts-node": "^10.9.2",
     "zod": "^3.24.1"
