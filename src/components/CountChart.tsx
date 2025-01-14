@@ -1,7 +1,4 @@
 "use client";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
-
 import {
   PieChart,
   Pie,
@@ -11,10 +8,10 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-
+const CountChart = ({ boys, girls }: { boys: number; girls: number }) => {
 const data = [
-  { name: 'Boys', value: 400 },
-  { name: 'Girls', value: 300 },
+  { name: "Boys", value: boys },
+    { name: "Girls", value: girls },
 ];
 
 
@@ -51,25 +48,18 @@ const renderCustomizedLabel = ({
     fill="white"
     textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central"
     fontSize={20}
+    fontFamily="Arial, sans-serif"
     >
       {`${(percent * 100).toFixed(0)}%`}
     </text>
   );
 };
 
-const CountChart = () => {
   return (
-    <div className="bg-white rounded-xl w-full h-full p-4">
-      {/* TITLE */}
-      <div className="flex justify-between items-center">
-        <h1 className="text-lg font-semibold">Students</h1>
-         <FontAwesomeIcon icon={faEllipsis} color="808080"/>
-      </div>
-      {/* CHART */}
-      <div className="relative w-full h-[75%]">
-        
+      <div className="relative w-full  h-96">
+      // h-[75%]
       <ResponsiveContainer width="100%" height="100%">
-        <PieChart width={400} height={400}>
+        <PieChart>
           <Pie
             data={data}
             cx="50%"
@@ -81,27 +71,15 @@ const CountChart = () => {
             dataKey="value"
           >
             {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              <Cell
+                key={`cell-${index}`}
+                fill={COLORS[index % COLORS.length]}
+              />
             ))}
           </Pie>
         </PieChart>
       </ResponsiveContainer>
       </div>
-
-      {/* BOTTOM */}
-      <div className="flex justify-center gap-16">
-        <div className="flex flex-col gap-1">
-          <div className="w-5 h-5 bg-colorBlueLight rounded-full" />
-          <h1 className="font-bold">1,234</h1>
-          <h2 className="text-xs text-slate-600">Boys (55%)</h2>
-        </div>
-        <div className="flex flex-col gap-1">
-          <div className="w-5 h-5 bg-colorPink rounded-full" />
-          <h1 className="font-bold">1,544</h1>
-          <h2 className="text-xs text-slate-600">Girls (45%)</h2>
-        </div>
-      </div>
-    </div>
   );
 };
 
