@@ -9,7 +9,7 @@ import FormContainer from "@/components/FormContainer";
 import prisma from "@/lib/prisma";
 import { Class, Prisma, Subject, Teacher } from "@prisma/client";
 import { ITEM_PER_PAGE } from "@/lib/settings";
-// import { auth } from "@clerk/nextjs/server";
+import { auth } from "@clerk/nextjs/server";
 
 type TeacherList = Teacher & { subjects: Subject[] } & { classes: Class[] };
 
@@ -18,8 +18,8 @@ const TeacherListPage = async ({
 }: {
   searchParams: { [key: string]: string | undefined };
 }) => {
-  // const { sessionClaims } = auth();
-  // const role = (sessionClaims?.metadata as { role?: string })?.role;
+  const { sessionClaims } = await  auth();
+  const role = (sessionClaims?.metadata as { role?: string })?.role;
 
 const columns = [
     {
@@ -51,14 +51,14 @@ const columns = [
         accessor: "address",
         className: "hidden lg:table-cell",
     },
-  //  ...(role === "admin"
-      // ? [
+   ...(role === "admin"
+      ? [
           {
             header: "Actions",
             accessor: "action",
           },
-      //   ]
-      // : []),
+        ]
+      : []),
 ];
 
 
