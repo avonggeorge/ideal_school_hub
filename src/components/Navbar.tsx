@@ -1,7 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faMessage, faBullhorn, faCircleUser, faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
+import { UserButton } from "@clerk/nextjs";
+import { currentUser } from "@clerk/nextjs/server";
 
-const Navbar = () => {
+const Navbar = async () => {
+  const user = await currentUser();
   return (
     <div className='flex items-center justify-between p-4'>
       {/* SEARCH BAR */}
@@ -20,9 +23,12 @@ const Navbar = () => {
         </div>
         <div className='flex flex-col'>
           <span className="text-xs leading-3 font-medium">John Doe</span>
-          <span className="text-[10px] text-gray-500 text-right">Admin</span>
+           <span className="text-[10px] text-gray-500 text-right">
+            {user?.publicMetadata?.role as string}
+          </span>
         </div>
         <FontAwesomeIcon icon={faCircleUser} color="#ADD8E6" size="2x"/>
+        <UserButton />
       </div>
     </div>
   )
