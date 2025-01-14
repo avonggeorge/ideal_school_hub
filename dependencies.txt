@@ -55,3 +55,15 @@ npm i react-hook-form zod @hookform/resolvers
 
 forcefully, resets the prisma seeding
 npx prisma db push --force-reset
+
+
+
+npm install @clerk/nextjs
+
+npm install @clerk/elements
+
+
+npm install react-toastify
+
+
+npm install next-cloudinary
