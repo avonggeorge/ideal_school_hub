@@ -1,5 +1,6 @@
 import Announcements from "@/components/Announcements";
-// import BigCalendarContainer from "@/components/BigCalendarContainer";
+import BigCalendarContainer from "@/components/BigCalendarContainer";
+import StudentAttendanceCard from "@/components/StudentAttendanceCard";
 import FormContainer from "@/components/FormContainer";
 import Performance from "@/components/Performance";
 import Image from "next/image";
@@ -7,7 +8,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook, faBuilding, faCalendarAlt, faFilter, faPhone, faTint, faEnvelope, faChalkboard, faUserCheck } from '@fortawesome/free-solid-svg-icons';
 import prisma from "@/lib/prisma";
-// import { auth } from "@clerk/nextjs/server";
+import { auth } from "@clerk/nextjs/server";
 import { Class, Student } from "@prisma/client";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
@@ -18,8 +19,8 @@ const SingleStudentPage = async ({
 }: {
   params: { id: string };
 }) => {
-  // const { sessionClaims } = auth();
-  // const role = (sessionClaims?.metadata as { role?: string })?.role;
+  const { sessionClaims } = await auth();
+  const role = (sessionClaims?.metadata as { role?: string })?.role;
 
   const student:
     | (Student & {
@@ -64,9 +65,9 @@ const SingleStudentPage = async ({
                 <div className="w-2/3 flex flex-col justify-between gap-4">
                  <div className="flex items-center gap-4">
               <h1 className="text-xl font-semibold">{student.name + " " + student.surname} </h1>
-              {/* {role === "admin" && (
+              {role === "admin" && (
                   <FormContainer table="student" type="update" data={student} />
-                )} */}
+                )}
               </div>
                             <p className="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                         <div className="flex item-center justify-between gap-2 flex-wrap text-xs font-medium">
@@ -76,7 +77,7 @@ const SingleStudentPage = async ({
                             </div>
                             <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
                                 <FontAwesomeIcon icon={faCalendarAlt} style={{ width: '24px', height: '24px', color: 'gray' }} />
-                                <span>{new Intl.DateTimeFormat("en-GB").format(student.birthday)}</span>
+                                <span>{new Intl.DateTimeFormat("en-GB").format(student.birthdate)}</span>
                             </div>
                             <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
                                 <FontAwesomeIcon icon={faEnvelope} style={{ width: '14px', height: '14px', color: 'blue' }} />
@@ -96,7 +97,7 @@ const SingleStudentPage = async ({
                             <FontAwesomeIcon icon={faUserCheck} className="w-6 h-6 text-blue-500" style={{ width: '24px', height: '24px' }} />
 
                            <Suspense fallback="loading...">
-                {/* <StudentAttendanceCard id={student.id} /> */}
+                <StudentAttendanceCard id={student.id} />
               </Suspense>
                         </div>
                         {/* CARD */}
@@ -128,7 +129,7 @@ const SingleStudentPage = async ({
         {/* BOTTOM */}
         <div className="mt-4 bg-white rounded-md p-4">
           <h1>Student&apos;s Schedule</h1>
-          {/* <BigCalendarContainer type="classId" id={student.class.id} /> */}
+          <BigCalendarContainer type="classId" id={student.class.id} />
         </div>
       </div>
       {/* RIGHT */}
