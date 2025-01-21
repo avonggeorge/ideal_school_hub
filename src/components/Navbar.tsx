@@ -5,6 +5,12 @@ import { currentUser } from "@clerk/nextjs/server";
 
 const Navbar = async () => {
   const user = await currentUser();
+
+
+  const userName = user?.firstName || "User"; // Default to "User" if no name is found
+  const userRole = user?.publicMetadata?.role as string; // Retrieve the user's role
+
+ 
   return (
     <div className='flex items-center justify-between p-4'>
       {/* SEARCH BAR */}
@@ -22,12 +28,12 @@ const Navbar = async () => {
           <div className='absolute -top-3 -right-3 w-5 h-5 flex items-center justify-center bg-colorBlue text-white rounded-full text-xs'>1</div>
         </div>
         <div className='flex flex-col'>
-          <span className="text-xs leading-3 font-medium">John Doe</span>
+          {/* Dynamic name and role */}
+          <span className="text-xs leading-3 font-medium">{userName}</span>
            <span className="text-[10px] text-gray-500 text-right">
-            {user?.publicMetadata?.role as string}
+            {userRole}
           </span>
         </div>
-        <FontAwesomeIcon icon={faCircleUser} color="#ADD8E6" size="2x"/>
         <UserButton />
       </div>
     </div>

@@ -56,8 +56,8 @@ const renderCustomizedLabel = ({
 };
 
   return (
-      <div className="relative w-full  h-96">
-      // h-[75%]
+      <div className="relative w-full h-[75%]">
+  
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie

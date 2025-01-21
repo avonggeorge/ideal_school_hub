@@ -58,8 +58,9 @@ const columns = [
       </td>
     </tr>
   );
+  const params = await searchParams;
 
- const { page, ...queryParams } = searchParams;
+  const { page, ...queryParams } = params;
 
   const p = page ? parseInt(page) : 1;
 
@@ -67,7 +68,7 @@ const columns = [
 
   const query: Prisma.ClassWhereInput = {};
 
-  if (queryParams) {
+
     for (const [key, value] of Object.entries(queryParams)) {
       if (value !== undefined) {
         switch (key) {
@@ -82,7 +83,7 @@ const columns = [
         }
       }
     }
-  }
+
 
   const [data, count] = await prisma.$transaction([
     prisma.class.findMany({
