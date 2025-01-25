@@ -1,9 +1,10 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useFormState } from "react-dom";
+import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose, faCloudUploadAlt, faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { Dispatch, SetStateAction } from 'react';
 import {
   deleteClass,
   deleteExam,
@@ -12,15 +13,10 @@ import {
   deleteTeacher,
 } from "@/lib/actions";
 import { useRouter } from "next/navigation";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import React, {useEffect} from 'react';
 import { toast } from "react-toastify";
 import { FormContainerProps } from "./FormContainer";
 
-
-// USE LAZY LOADING
-
-// import TeacherForm from "./forms/TeacherForm";
-// import StudentForm from "./forms/StudentForm";
 
 
 
@@ -46,10 +42,7 @@ const deleteActionMap = {
   announcement: deleteSubject,
 };
 
-// USE LAZY LOADING
 
-// import TeacherForm from "./forms/TeacherForm";
-// import StudentForm from "./forms/StudentForm";
 
 const TeacherForm = dynamic(() => import("./forms/TeacherForm"), {
   loading: () => <h1>Loading...</h1>,
@@ -115,10 +108,12 @@ const forms: {
       setOpen={setOpen}
       relatedData={relatedData}
     />
-    // TODO OTHER LIST ITEMS
   ),
+  // Other forms...
 };
 
+    // TODO OTHER LIST ITEMS
+ 
 const iconStyles = {
   create: "text-green-500", // Green for create
   update: "text-blue-500",  // Blue for update
@@ -143,7 +138,8 @@ relatedData,
   const [open, setOpen] = useState(false);
 
    const Form = () => {
-    const [state, formAction] = useFormState(deleteActionMap[table], {
+    const [actionState, setActionState] = React.useActionState
+    (deleteActionMap[table], {
       success: false,
       error: false,
     });
@@ -151,12 +147,12 @@ relatedData,
     const router = useRouter();
 
     useEffect(() => {
-      if (state.success) {
+       if (actionState.success) {
         toast(`${table} has been deleted!`);
         setOpen(false);
         router.refresh();
       }
-    }, [state, router]);
+    }, [actionState.success, router]);
 
     return type === "delete" && id ? (
       <form action="" className="p-4 flex flex-col gap-4">

@@ -1,14 +1,12 @@
-"use client";
-
 import { CldUploadWidget } from "next-cloudinary";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import InputField from "../InputField";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Dispatch, SetStateAction } from "react";
 import { faCloudUploadAlt } from "@fortawesome/free-solid-svg-icons";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { teacherSchema, TeacherSchema } from "@/lib/formValidationSchemas";
-import { useFormState } from "react-dom";
 import { createTeacher, updateTeacher } from "@/lib/actions";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
@@ -33,32 +31,31 @@ const TeacherForm = ({
   });
 
   const [img, setImg] = useState<any>();
-
-  const [state, formAction] = useFormState(
-    type === "create" ? createTeacher : updateTeacher,
-    {
-      success: false,
-      error: false,
-    }
-  );
-
-  const onSubmit = handleSubmit((data) => {
-    console.log(data);
-    formAction({ ...data, img: img?.secure_url });
-  });
-
+  const [state, setState] = useState({ success: false, error: false });
+  const formActionHandler = type === "create" ? createTeacher : updateTeacher;
   const router = useRouter();
+
+  const onSubmit = handleSubmit(async (formData) => {
+    try {
+      const dataToSubmit = { ...formData, img: img?.secure_url };
+      await formActionHandler(state, dataToSubmit);
+// Perform the form action (create or update)
+      setState({ success: true, error: false }); // Update the state on success
+      setOpen(false); // Close the form
+    } catch (error) {
+      setState({ success: false, error: true }); // Update the state on error
+      console.error("Form submission failed:", error);
+    }
+  });
 
   useEffect(() => {
     if (state.success) {
       toast(`Teacher has been ${type === "create" ? "created" : "updated"}!`);
-      setOpen(false);
-      router.refresh();
+      router.refresh(); // Refresh the page or navigate to another page
     }
-  }, [state, router, type, setOpen]);
+  }, [state.success, router, type]);
 
   const { subjects } = relatedData;
-
 
   return (
     <form className="flex flex-col gap-8" onSubmit={onSubmit}>
@@ -92,6 +89,7 @@ const TeacherForm = ({
           error={errors?.password}
         />
       </div>
+
       <span className="text-xs text-gray-400 font-medium">
         Personal Information
       </span>
@@ -185,6 +183,7 @@ const TeacherForm = ({
             </p>
           )}
         </div>
+
         <CldUploadWidget
           uploadPreset="school"
           onSuccess={(result, { widget }) => {
@@ -192,22 +191,20 @@ const TeacherForm = ({
             widget.close();
           }}
         >
-          {({ open }) => {
-            return (
-              <div
-                className="text-xs text-gray-500 flex items-center gap-2 cursor-pointer"
-                onClick={() => open()}
-              >
-            <FontAwesomeIcon icon={faCloudUploadAlt} width={28} height={28} />
-            <span>Upload a photo</span>
-          </div>
-            );
-          }}
+          {({ open }) => (
+            <div
+              className="text-xs text-gray-500 flex items-center gap-2 cursor-pointer"
+              onClick={() => open()}
+            >
+              <FontAwesomeIcon icon={faCloudUploadAlt} width={28} height={28} />
+              <span>Upload a photo</span>
+            </div>
+          )}
         </CldUploadWidget>
       </div>
-      {state.error && (
-        <span className="text-red-500">Something went wrong!</span>
-      )}
+
+      {state.error && <span className="text-red-500">Something went wrong!</span>}
+
       <button className="bg-blue-400 text-white p-2 rounded-md">
         {type === "create" ? "Create" : "Update"}
       </button>
