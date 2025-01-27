@@ -1,51 +1,61 @@
-# Ideal Sch
-Ideal-School-Hub is a comprehensive web-based school management system with role-based access for administrators, teachers, students, and parents. The application provide tailored functionalities for each user type, ensuring efficient management of school operations and improved communication between all stakeholders.
+# Ideal School Hub
 
-Core features:
-- Secure login system with role-based access control
-- Administrator dashboard for school-wide management
-- Teacher portal for class management and student progress tracking
-- Student interface for accessing schedules, assignments, and grades
-- Parent portal for monitoring their child's academic performance and school activities
+**Ideal School Hub**  is a comprehensive school management system designed to streamline the administration and enhance the educational experience of students, teachers, and parents. The platform encompasses a variety of functionalities tailored for different user roles, including Admin, Teacher, Parent, and Student accounts.
+## Table of Contents
+1. [Features](#features)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Configuration](#configuration)
+5. [Contributors](#contributing)
 
-UI/Style:
-- Clean, intuitive interface with a professional academic aesthetic
-- Color-coded sections for easy navigation between different user roles
-- Responsive design with customizable widgets for personalized user experiences
+## Features
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+-   **Admin Dashboard**:
+    
+    -   Manage user accounts (teachers, students, and parents).
+    -   Oversee school operations, including enrollment and course management.
+    -   Generate reports and analytics for performance tracking.
+-   **Teacher Interface**:
+    
+    -   Create and manage class schedules and assignments.
+    -   Grade student submissions and provide feedback.
+    -   Communicate with students and parents through messaging tools.
+-   **Parent Portal**:
+    
+    -   Access student academic records and report cards.
+    -   Monitor attendance and communicate with teachers.
+    -   Stay updated on school events and announcements.
+-   **Student Account**:
+    
+    -   View class schedules, assignments, and grades.
+    -   Submit assignments and participate in class discussions.
+    -   Engage with peers and teachers through the platform's communication features.
+
+
+
+
+## Technologies Used
+
+-   Frontend: HTML, TypeScript, Next.js, Tailwind CSS
+-   Backend: Node.js, Prisma ORM
+-   Database: PostgreSQL
+-   Authentication: Clerk
 
 ## Getting Started
 
-First, run the development server:
+1.  Clone the repository:  `git clone https://github.com/avonggeorge/ideal_school_hub`
+2.  Install dependencies:  `npm install`
+3.  Run the application:  `npm run dev`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Prerequisites for running the project:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+-   Node.js (v14+)
+- Tailwind CSS
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Contributors
+- George Avong
+- Mrs Onyiyechi Ekediego
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
